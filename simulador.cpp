@@ -1,22 +1,22 @@
 #include <stdio.h> // Biblioteca para o printf e scanf.
 #include <stdlib.h> // Biblioteca para o rand.
-#include <locale.h> // Biblioteca para a regionalização.
+#include <locale.h> // Biblioteca para a regionalizaÃ§Ã£o.
 #include <time.h> // Biblioteca para o srand.
 #include <windows.h> // Biblioteca para o SetConsoleTitle.
 
 #define N 50 // Tamanho do Vetor
 
-// Zeros (0) representam posições de memória livres.
-// Uns (1) representam posições de memória ocupadas.
+// Zeros (0) representam posiÃ§Ãµes de memÃ³ria livres.
+// Uns (1) representam posiÃ§Ãµes de memÃ³ria ocupadas.
 
 int inicializacao(int memoria[N]) {
      int i,n;
-     printf("Posição: [0 1 2 3 4 5 6 7 8 9|0 1 2 3 4 5 6 7 8 9|0 1 2 3 4 5 6 7 8 9|0 1 2 3 4 5 6 7 8 9|0 1 2 3 4 5 6 7 8 9|0]");
+     printf("PosiÃ§Ã£o: [0 1 2 3 4 5 6 7 8 9|0 1 2 3 4 5 6 7 8 9|0 1 2 3 4 5 6 7 8 9|0 1 2 3 4 5 6 7 8 9|0 1 2 3 4 5 6 7 8 9|0]");
      printf("\n");
-     printf("Memória: [");
+     printf("MemÃ³ria: [");
      srand(time(NULL)); // Comando que randomiza as vagas do processo.
      for(i=0;i<=N;i++){
-          memoria[i]=rand()%2; // Comando que delimita o valor máximo a ser randomizado.
+          memoria[i]=rand()%2; // Comando que delimita o valor mÃ¡ximo a ser randomizado.
           printf("%d-", memoria[i]);
           }
      printf("]\n");
@@ -96,17 +96,17 @@ int bf(int memoria[N], int processo) { // BestFit (Melhor Vaga)
 
 int main() {
     int memoria[N],processo=1;
-    setlocale(LC_ALL, "Portuguese"); // Comando de regionalização.
-    SetConsoleTitle("Simulador de Alocamento de Memoria"); // Comando que dá nome ao programa. 
+    setlocale(LC_ALL, "Portuguese"); // Comando de regionalizaÃ§Ã£o.
+    SetConsoleTitle("Simulador de Alocamento de Memoria"); // Comando que dÃ¡ nome ao programa. 
     
-    while(processo!=0){ // Comando para que o código só deixe de ser executado ao inserir zero.
-   		inicializacao(memoria);	// Função que inicializa o vetor e o randomiza.
+    while(processo!=0){ // Comando para que o cÃ³digo sÃ³ deixe de ser executado ao inserir zero.
+   		inicializacao(memoria);	// FunÃ§Ã£o que inicializa o vetor e o randomiza.
 		printf("Informe o tamanho do processo: ");
 		scanf("%d", &processo);	
 		if(processo!=0)	{
-		printf("FirstFit: %d\n",ff(memoria, processo) ); // Chama a função do FirstFit.
-		printf("WorstFit: %d\n",wf(memoria, processo) ); // Chama a função do WorstFit.
-		printf("BestFit: %d\n",bf(memoria, processo) ); // Chama a função do BestFit.
+		printf("FirstFit: %d\n",ff(memoria, processo) ); // Chama a funÃ§Ã£o do FirstFit.
+		printf("WorstFit: %d\n",wf(memoria, processo) ); // Chama a funÃ§Ã£o do WorstFit.
+		printf("BestFit: %d\n",bf(memoria, processo) ); // Chama a funÃ§Ã£o do BestFit.
 		printf("\n");
         }
 		   }   	
